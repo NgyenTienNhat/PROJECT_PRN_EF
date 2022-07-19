@@ -46,10 +46,17 @@ namespace StudentManagement
         private void button_add_teacher_Click(object sender, EventArgs e)
         {
             DBPContext context = new DBPContext();
-            Teacher teacher = GetInfoTeacher();
-            context.Add(teacher);
-            context.SaveChanges();
-            LoadDataForDGV();
+            if (tb_teachername.Text == "" || tb_mobile.Text == "" || tb_address.Text == "" || radioButton_female.Checked == null || radioButton_male.Checked == null)
+            {
+                MessageBox.Show("Infomation Teacher Empty", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                Teacher teacher = GetInfoTeacher();
+                context.Add(teacher);
+                context.SaveChanges();
+                LoadDataForDGV();
+            }
         }
 
         private void button_cancel_Click(object sender, EventArgs e)

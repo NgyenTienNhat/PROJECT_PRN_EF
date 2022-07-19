@@ -30,23 +30,23 @@
         {
             this.panel_addstd = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
-            this.tb_totalstd = new System.Windows.Forms.TextBox();
+            this.tb_totalteacher = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox_fname = new System.Windows.Forms.TextBox();
+            this.tb_nameteacher = new System.Windows.Forms.TextBox();
             this.button_searchbyname = new System.Windows.Forms.Button();
             this.textBox_search = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox_Id = new System.Windows.Forms.TextBox();
+            this.tb_idteacher = new System.Windows.Forms.TextBox();
             this.button_delete_std = new System.Windows.Forms.Button();
             this.button_update_std = new System.Windows.Forms.Button();
-            this.textBox_address = new System.Windows.Forms.TextBox();
+            this.tb_address = new System.Windows.Forms.TextBox();
             this.radioButton_female = new System.Windows.Forms.RadioButton();
             this.radioButton_male = new System.Windows.Forms.RadioButton();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.dateTimePicker_dob = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox_mobile = new System.Windows.Forms.TextBox();
+            this.tb_mobileteacher = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
@@ -62,23 +62,23 @@
             this.panel_addstd.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panel_addstd.Controls.Add(this.label11);
-            this.panel_addstd.Controls.Add(this.tb_totalstd);
+            this.panel_addstd.Controls.Add(this.tb_totalteacher);
             this.panel_addstd.Controls.Add(this.label10);
-            this.panel_addstd.Controls.Add(this.textBox_fname);
+            this.panel_addstd.Controls.Add(this.tb_nameteacher);
             this.panel_addstd.Controls.Add(this.button_searchbyname);
             this.panel_addstd.Controls.Add(this.textBox_search);
             this.panel_addstd.Controls.Add(this.label8);
-            this.panel_addstd.Controls.Add(this.textBox_Id);
+            this.panel_addstd.Controls.Add(this.tb_idteacher);
             this.panel_addstd.Controls.Add(this.button_delete_std);
             this.panel_addstd.Controls.Add(this.button_update_std);
-            this.panel_addstd.Controls.Add(this.textBox_address);
+            this.panel_addstd.Controls.Add(this.tb_address);
             this.panel_addstd.Controls.Add(this.radioButton_female);
             this.panel_addstd.Controls.Add(this.radioButton_male);
             this.panel_addstd.Controls.Add(this.label6);
             this.panel_addstd.Controls.Add(this.label4);
             this.panel_addstd.Controls.Add(this.dateTimePicker_dob);
             this.panel_addstd.Controls.Add(this.label3);
-            this.panel_addstd.Controls.Add(this.textBox_mobile);
+            this.panel_addstd.Controls.Add(this.tb_mobileteacher);
             this.panel_addstd.Controls.Add(this.label2);
             this.panel_addstd.Location = new System.Drawing.Point(10, 418);
             this.panel_addstd.Name = "panel_addstd";
@@ -95,14 +95,14 @@
             this.label11.TabIndex = 49;
             this.label11.Text = "Total Teacher :";
             // 
-            // tb_totalstd
+            // tb_totalteacher
             // 
-            this.tb_totalstd.Enabled = false;
-            this.tb_totalstd.Location = new System.Drawing.Point(615, 9);
-            this.tb_totalstd.Name = "tb_totalstd";
-            this.tb_totalstd.Size = new System.Drawing.Size(94, 27);
-            this.tb_totalstd.TabIndex = 48;
-            this.tb_totalstd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tb_totalteacher.Enabled = false;
+            this.tb_totalteacher.Location = new System.Drawing.Point(615, 9);
+            this.tb_totalteacher.Name = "tb_totalteacher";
+            this.tb_totalteacher.Size = new System.Drawing.Size(94, 27);
+            this.tb_totalteacher.TabIndex = 48;
+            this.tb_totalteacher.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label10
             // 
@@ -114,13 +114,13 @@
             this.label10.TabIndex = 47;
             this.label10.Text = "Teacher Name :";
             // 
-            // textBox_fname
+            // tb_nameteacher
             // 
-            this.textBox_fname.Location = new System.Drawing.Point(153, 102);
-            this.textBox_fname.Name = "textBox_fname";
-            this.textBox_fname.PlaceholderText = "Enter Name";
-            this.textBox_fname.Size = new System.Drawing.Size(152, 27);
-            this.textBox_fname.TabIndex = 46;
+            this.tb_nameteacher.Location = new System.Drawing.Point(153, 102);
+            this.tb_nameteacher.Name = "tb_nameteacher";
+            this.tb_nameteacher.PlaceholderText = "Enter Name";
+            this.tb_nameteacher.Size = new System.Drawing.Size(152, 27);
+            this.tb_nameteacher.TabIndex = 46;
             // 
             // button_searchbyname
             // 
@@ -150,13 +150,13 @@
             this.label8.TabIndex = 19;
             this.label8.Text = "Teacher ID :";
             // 
-            // textBox_Id
+            // tb_idteacher
             // 
-            this.textBox_Id.Enabled = false;
-            this.textBox_Id.Location = new System.Drawing.Point(153, 58);
-            this.textBox_Id.Name = "textBox_Id";
-            this.textBox_Id.Size = new System.Drawing.Size(152, 27);
-            this.textBox_Id.TabIndex = 18;
+            this.tb_idteacher.Enabled = false;
+            this.tb_idteacher.Location = new System.Drawing.Point(153, 58);
+            this.tb_idteacher.Name = "tb_idteacher";
+            this.tb_idteacher.Size = new System.Drawing.Size(152, 27);
+            this.tb_idteacher.TabIndex = 18;
             // 
             // button_delete_std
             // 
@@ -178,13 +178,13 @@
             this.button_update_std.Text = "Update";
             this.button_update_std.UseVisualStyleBackColor = false;
             // 
-            // textBox_address
+            // tb_address
             // 
-            this.textBox_address.Location = new System.Drawing.Point(615, 146);
-            this.textBox_address.Name = "textBox_address";
-            this.textBox_address.PlaceholderText = "Enter Address";
-            this.textBox_address.Size = new System.Drawing.Size(297, 27);
-            this.textBox_address.TabIndex = 13;
+            this.tb_address.Location = new System.Drawing.Point(615, 146);
+            this.tb_address.Name = "tb_address";
+            this.tb_address.PlaceholderText = "Enter Address";
+            this.tb_address.Size = new System.Drawing.Size(297, 27);
+            this.tb_address.TabIndex = 13;
             // 
             // radioButton_female
             // 
@@ -247,13 +247,13 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Dob :";
             // 
-            // textBox_mobile
+            // tb_mobileteacher
             // 
-            this.textBox_mobile.Location = new System.Drawing.Point(153, 145);
-            this.textBox_mobile.Name = "textBox_mobile";
-            this.textBox_mobile.PlaceholderText = "Enter Mobile";
-            this.textBox_mobile.Size = new System.Drawing.Size(152, 27);
-            this.textBox_mobile.TabIndex = 4;
+            this.tb_mobileteacher.Location = new System.Drawing.Point(153, 145);
+            this.tb_mobileteacher.Name = "tb_mobileteacher";
+            this.tb_mobileteacher.PlaceholderText = "Enter Mobile";
+            this.tb_mobileteacher.Size = new System.Drawing.Size(152, 27);
+            this.tb_mobileteacher.TabIndex = 4;
             // 
             // label2
             // 
@@ -307,6 +307,7 @@
             this.dataGridView1.RowTemplate.Height = 29;
             this.dataGridView1.Size = new System.Drawing.Size(952, 365);
             this.dataGridView1.TabIndex = 20;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // frmEditTeacher
             // 
@@ -321,6 +322,7 @@
             this.MinimumSize = new System.Drawing.Size(972, 697);
             this.Name = "frmEditTeacher";
             this.Text = "frmEditTeacher";
+            this.Load += new System.EventHandler(this.frmEditTeacher_Load);
             this.panel_addstd.ResumeLayout(false);
             this.panel_addstd.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -334,23 +336,23 @@
 
         private System.Windows.Forms.Panel panel_addstd;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox tb_totalstd;
+        private System.Windows.Forms.TextBox tb_totalteacher;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox_fname;
+        private System.Windows.Forms.TextBox tb_nameteacher;
         private System.Windows.Forms.Button button_searchbyname;
         private System.Windows.Forms.TextBox textBox_search;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox_Id;
+        private System.Windows.Forms.TextBox tb_idteacher;
         private System.Windows.Forms.Button button_delete_std;
         private System.Windows.Forms.Button button_update_std;
-        private System.Windows.Forms.TextBox textBox_address;
+        private System.Windows.Forms.TextBox tb_address;
         private System.Windows.Forms.RadioButton radioButton_female;
         private System.Windows.Forms.RadioButton radioButton_male;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker dateTimePicker_dob;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox_mobile;
+        private System.Windows.Forms.TextBox tb_mobileteacher;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label12;

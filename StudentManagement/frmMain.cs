@@ -156,5 +156,10 @@ namespace StudentManagement
             openchildForm(new frmStudentOfClass());
             hideSubmenu();
         }
+
+        private void panel_main_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

@@ -400,6 +400,7 @@
             this.panel_main.Name = "panel_main";
             this.panel_main.Size = new System.Drawing.Size(971, 699);
             this.panel_main.TabIndex = 1;
+            this.panel_main.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_main_Paint);
             // 
             // frmMain
             // 
