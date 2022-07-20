@@ -26,35 +26,48 @@ namespace StudentManagement
 
         private void button_login_Click(object sender, EventArgs e)
         {
-            /*DBPContext context = new DBPContext();
-            String uname = textBox_username.Text;
-            String pass = textBox_password.Text;
-
-
-            if (uname == "" || pass == "")
+            if (string.IsNullOrEmpty(textBox_username.Text) && string.IsNullOrEmpty(textBox_password.Text))
             {
-                MessageBox.Show("Input Username and Password", "Wrong Login", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Username and Password Empty!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                textBox_username.Focus();
+                return;
             }
-            else if (context.Accounts.Where(x => x.UserName.Equals(uname) && x.Password.Equals(pass)).ToList())
+            else if (string.IsNullOrEmpty(textBox_username.Text))
             {
-                this.Hide();
-                frmMain main = new frmMain();
-                main.Show();
+                MessageBox.Show("Username Empty!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                textBox_username.Focus();
+                return;
+            }
+            else if (string.IsNullOrEmpty(textBox_password.Text))
+            {
+                MessageBox.Show("Password Empty!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                textBox_password.Focus();
+                return;
             }
             else
             {
-                MessageBox.Show("Username and password are not exits", "Wrong Login", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }*/
+                DBPContext context = new DBPContext();
+                Account account = context.Accounts.FirstOrDefault(x => x.UserName == textBox_username.Text && x.Password == textBox_password.Text);
+                if (account != null)
+                {
+                    this.Hide();
+                    frmMain main = new frmMain();
+                    main.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Username or Password Invalid");
+                }
+            }
+
             
+
         }
         private void frmLogin_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void textBox_username_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

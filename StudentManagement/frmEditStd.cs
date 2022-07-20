@@ -96,7 +96,7 @@ namespace StudentManagement
             DBPContext context = new DBPContext();
             string keyword = textBox_search.Text.Trim();
 
-            if (keyword.Contains("ABC"))
+            /*if (keyword.Contains("ABC"))
             {
                 var datadataGridViewStudent = (from s in context.Students
                                                   join c in context.Classes on s.ClassId equals c.ClassId
@@ -137,7 +137,7 @@ namespace StudentManagement
                 tb_totalstd.Text = datadataGridViewStudent.Where(x => x.StudentId != null).ToList().Count.ToString();
             }
             else
-            {
+            {*/
                 var datadataGridViewStudent = (from s in context.Students
                                                join c in context.Classes on s.ClassId equals c.ClassId
                                                select new
@@ -158,7 +158,7 @@ namespace StudentManagement
                 || x.Address.Contains(keyword)
                 ).ToList();
                 dataGridView1.DataSource = datadataGridViewStudent;
-                tb_totalstd.Text = datadataGridViewStudent.Where(x => x.StudentId != null).ToList().Count.ToString();
+                tb_totalstd.Text = datadataGridViewStudent.Where(x => x.FistName.Contains(keyword)|| x.LastName.Contains(keyword)|| x.RollNo.Contains(keyword)|| x.Mobile.Contains(keyword)|| x.Address.Contains(keyword)).ToList().Count.ToString();
 
                 /* dataGridView1.DataSource = context.Students.Where(x => x.FirstName.Contains(keyword)
                  || x.LastName.Contains(keyword)
@@ -182,12 +182,21 @@ namespace StudentManagement
                 Student s = GetStudentInfo();
                 context.Update(s);
                 context.SaveChanges();
+                MessageBox.Show("Update infomation student successfull!");
+                textBox_Id.Clear();
+                textBox_fname.Clear();
+                textBox_lname.Clear();
+                textBox_rollno.Clear();
+                textBox_mobile.Clear();
+                textBox_address.Clear();
                 LoadDataForDGV();
             }
         }
 
         private void button_delete_std_Click(object sender, EventArgs e)
         {
+            string fistname = textBox_fname.Text;
+            string lastname = textBox_lname.Text;
             if (textBox_fname.Text.ToString() == "" || textBox_lname.Text.ToString() == "" || textBox_rollno.Text.ToString() == "" || textBox_mobile.Text.ToString() == "")
             {
                 MessageBox.Show("Please select the student you want to delete", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -199,6 +208,7 @@ namespace StudentManagement
                 Student s = GetStudentInfo();
                 context.Remove(s);
                 context.SaveChanges();
+                MessageBox.Show("Delete student [" + lastname + " "+ fistname +"] successfull!");
                 textBox_Id.Clear();
                 textBox_fname.Clear();
                 textBox_lname.Clear();

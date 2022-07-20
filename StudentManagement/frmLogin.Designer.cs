@@ -89,7 +89,6 @@
             this.textBox_username.Name = "textBox_username";
             this.textBox_username.Size = new System.Drawing.Size(181, 27);
             this.textBox_username.TabIndex = 4;
-            this.textBox_username.TextChanged += new System.EventHandler(this.textBox_username_TextChanged);
             // 
             // textBox_password
             // 
@@ -111,6 +110,7 @@
             this.button_login.Text = "Login";
             this.button_login.UseVisualStyleBackColor = false;
             this.button_login.Click += new System.EventHandler(this.button_login_Click);
+            this.button_login.Enter += new System.EventHandler(this.button_login_Click);
             // 
             // button_exitlogin
             // 

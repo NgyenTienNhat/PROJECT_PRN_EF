@@ -121,16 +121,19 @@ namespace StudentManagement
             DBPContext context = new DBPContext();
             string keyword = textBox_search.Text.Trim();
            
-            tb_totalteacher.Text = context.Teachers.Where(x => x.TeacherId != null).ToList().Count.ToString();
             if (textBox_search.Text == "")
             {
                 if (checkBox_sort.Checked == true )
                 {
                     dataGridView1.DataSource = context.Teachers.Select(x => new { x.TeacherId, x.TeacherName, x.Dob, x.Male, x.Mobile, x.Address }).OrderBy(x => x.TeacherName).ToList();
+                    tb_totalteacher.Text = context.Teachers.Where(x => x.TeacherName.Contains(keyword)).ToList().Count.ToString();
+
                 }
                 else
                 {
                     dataGridView1.DataSource = context.Teachers.Select(x => new { x.TeacherId, x.TeacherName, x.Dob, x.Male, x.Mobile, x.Address }).ToList();
+                    tb_totalteacher.Text = context.Teachers.Where(x => x.TeacherName.Contains(keyword)).ToList().Count.ToString();
+
                 }
             }
             else if(textBox_search.Text != "")
@@ -148,6 +151,8 @@ namespace StudentManagement
                     }).Where(x => x.TeacherName.Contains(keyword)
                     || x.Mobile.Contains(keyword)
                     || x.Address.Contains(keyword)).OrderBy(x => x.TeacherName).ToList();
+                    tb_totalteacher.Text = context.Teachers.Where(x => x.TeacherName.Contains(keyword)).ToList().Count.ToString();
+
                 }
                 else
                 {
@@ -162,6 +167,8 @@ namespace StudentManagement
                     }).Where(x => x.TeacherName.Contains(keyword)
                     || x.Mobile.Contains(keyword)
                     || x.Address.Contains(keyword)).ToList();
+                    tb_totalteacher.Text = context.Teachers.Where(x => x.TeacherName.Contains(keyword)).ToList().Count.ToString();
+
                 }
             }
             else
@@ -177,6 +184,8 @@ namespace StudentManagement
                 }).Where(x => x.TeacherName.Contains(keyword)
                 || x.Mobile.Contains(keyword)
                 || x.Address.Contains(keyword)).ToList();
+                tb_totalteacher.Text = context.Teachers.Where(x => x.TeacherName.Contains(keyword)).ToList().Count.ToString();
+
             }
         }
 
@@ -184,18 +193,42 @@ namespace StudentManagement
         {
             LoadDataForDGV();
             textBox_search.Clear();
+            checkBox_sort.Checked = false;
         }
 
         private void checkBox_sort_CheckedChanged(object sender, EventArgs e)
         {
             DBPContext context = new DBPContext();
-            if(checkBox_sort.Checked == true)
+            string keyword = textBox_search.Text.Trim();
+            if (checkBox_sort.Checked == true)
             {
-                dataGridView1.DataSource = context.Teachers.Select(x => new { x.TeacherId, x.TeacherName, x.Dob, x.Male, x.Mobile, x.Address }).OrderBy(x => x.TeacherName).ToList();
+                dataGridView1.DataSource = context.Teachers.Select(x => new
+                {
+                    x.TeacherId,
+                    x.TeacherName,
+                    x.Dob,
+                    x.Male,
+                    x.Mobile,
+                    x.Address
+                }).Where(x => x.TeacherName.Contains(keyword)
+                || x.Mobile.Contains(keyword)
+                || x.Address.Contains(keyword)).OrderBy(x => x.TeacherName).ToList();
+                tb_totalteacher.Text = context.Teachers.Where(x => x.TeacherName.Contains(keyword)).ToList().Count.ToString();
             }
             else
             {
-                LoadDataForDGV();
+                dataGridView1.DataSource = context.Teachers.Select(x => new
+                {
+                    x.TeacherId,
+                    x.TeacherName,
+                    x.Dob,
+                    x.Male,
+                    x.Mobile,
+                    x.Address
+                }).Where(x => x.TeacherName.Contains(keyword)
+                || x.Mobile.Contains(keyword)
+                || x.Address.Contains(keyword)).ToList();
+                tb_totalteacher.Text = context.Teachers.Where(x => x.TeacherName.Contains(keyword)).ToList().Count.ToString();
             }
             // text > cb> search done
             // text > search > checkbox pending
