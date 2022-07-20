@@ -161,5 +161,10 @@ namespace StudentManagement
         {
 
         }
+
+        private void button_dboard_Click(object sender, EventArgs e)
+        {
+            openchildForm(new frmDashboard());
+        }
     }
 }

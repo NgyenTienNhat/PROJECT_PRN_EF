@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.panel_slide = new System.Windows.Forms.Panel();
+            this.button_dboard = new System.Windows.Forms.Button();
             this.panel_classsubmenu = new System.Windows.Forms.Panel();
             this.button_stdofclass = new System.Windows.Forms.Button();
             this.button_manageclass = new System.Windows.Forms.Button();
@@ -44,7 +45,6 @@
             this.button_newcourse = new System.Windows.Forms.Button();
             this.button_course = new System.Windows.Forms.Button();
             this.panel_stdsubmenu = new System.Windows.Forms.Panel();
-            this.button_status = new System.Windows.Forms.Button();
             this.button_managestd = new System.Windows.Forms.Button();
             this.button_registration = new System.Windows.Forms.Button();
             this.button_std = new System.Windows.Forms.Button();
@@ -64,6 +64,7 @@
             // 
             this.panel_slide.AutoScroll = true;
             this.panel_slide.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.panel_slide.Controls.Add(this.button_dboard);
             this.panel_slide.Controls.Add(this.panel_classsubmenu);
             this.panel_slide.Controls.Add(this.button_class);
             this.panel_slide.Controls.Add(this.button_logout);
@@ -76,9 +77,28 @@
             this.panel_slide.Controls.Add(this.panel_logo);
             this.panel_slide.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel_slide.Location = new System.Drawing.Point(0, 0);
+            this.panel_slide.Margin = new System.Windows.Forms.Padding(4);
             this.panel_slide.Name = "panel_slide";
-            this.panel_slide.Size = new System.Drawing.Size(185, 707);
+            this.panel_slide.Size = new System.Drawing.Size(231, 884);
             this.panel_slide.TabIndex = 0;
+            // 
+            // button_dboard
+            // 
+            this.button_dboard.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button_dboard.FlatAppearance.BorderSize = 0;
+            this.button_dboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_dboard.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button_dboard.ForeColor = System.Drawing.Color.White;
+            this.button_dboard.Location = new System.Drawing.Point(0, 775);
+            this.button_dboard.Margin = new System.Windows.Forms.Padding(4);
+            this.button_dboard.Name = "button_dboard";
+            this.button_dboard.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.button_dboard.Size = new System.Drawing.Size(205, 56);
+            this.button_dboard.TabIndex = 10;
+            this.button_dboard.Text = "Dashboard";
+            this.button_dboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_dboard.UseVisualStyleBackColor = true;
+            this.button_dboard.Click += new System.EventHandler(this.button_dboard_Click);
             // 
             // panel_classsubmenu
             // 
@@ -86,9 +106,10 @@
             this.panel_classsubmenu.Controls.Add(this.button_stdofclass);
             this.panel_classsubmenu.Controls.Add(this.button_manageclass);
             this.panel_classsubmenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel_classsubmenu.Location = new System.Drawing.Point(0, 572);
+            this.panel_classsubmenu.Location = new System.Drawing.Point(0, 659);
+            this.panel_classsubmenu.Margin = new System.Windows.Forms.Padding(4);
             this.panel_classsubmenu.Name = "panel_classsubmenu";
-            this.panel_classsubmenu.Size = new System.Drawing.Size(164, 99);
+            this.panel_classsubmenu.Size = new System.Drawing.Size(205, 116);
             this.panel_classsubmenu.TabIndex = 9;
             // 
             // button_stdofclass
@@ -99,10 +120,11 @@
             this.button_stdofclass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_stdofclass.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button_stdofclass.ForeColor = System.Drawing.Color.White;
-            this.button_stdofclass.Location = new System.Drawing.Point(0, 44);
+            this.button_stdofclass.Location = new System.Drawing.Point(0, 55);
+            this.button_stdofclass.Margin = new System.Windows.Forms.Padding(4);
             this.button_stdofclass.Name = "button_stdofclass";
-            this.button_stdofclass.Padding = new System.Windows.Forms.Padding(21, 0, 0, 0);
-            this.button_stdofclass.Size = new System.Drawing.Size(164, 44);
+            this.button_stdofclass.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
+            this.button_stdofclass.Size = new System.Drawing.Size(205, 55);
             this.button_stdofclass.TabIndex = 1;
             this.button_stdofclass.Text = "Student Of Class";
             this.button_stdofclass.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -118,9 +140,10 @@
             this.button_manageclass.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button_manageclass.ForeColor = System.Drawing.Color.White;
             this.button_manageclass.Location = new System.Drawing.Point(0, 0);
+            this.button_manageclass.Margin = new System.Windows.Forms.Padding(4);
             this.button_manageclass.Name = "button_manageclass";
-            this.button_manageclass.Padding = new System.Windows.Forms.Padding(21, 0, 0, 0);
-            this.button_manageclass.Size = new System.Drawing.Size(164, 44);
+            this.button_manageclass.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
+            this.button_manageclass.Size = new System.Drawing.Size(205, 55);
             this.button_manageclass.TabIndex = 0;
             this.button_manageclass.Text = "Manage Class";
             this.button_manageclass.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -134,10 +157,11 @@
             this.button_class.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_class.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button_class.ForeColor = System.Drawing.Color.White;
-            this.button_class.Location = new System.Drawing.Point(0, 527);
+            this.button_class.Location = new System.Drawing.Point(0, 603);
+            this.button_class.Margin = new System.Windows.Forms.Padding(4);
             this.button_class.Name = "button_class";
-            this.button_class.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button_class.Size = new System.Drawing.Size(164, 45);
+            this.button_class.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.button_class.Size = new System.Drawing.Size(205, 56);
             this.button_class.TabIndex = 8;
             this.button_class.Text = "Class";
             this.button_class.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -151,10 +175,10 @@
             this.button_logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_logout.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button_logout.ForeColor = System.Drawing.Color.White;
-            this.button_logout.Location = new System.Drawing.Point(0, 671);
+            this.button_logout.Location = new System.Drawing.Point(0, 831);
             this.button_logout.Margin = new System.Windows.Forms.Padding(0);
             this.button_logout.Name = "button_logout";
-            this.button_logout.Size = new System.Drawing.Size(164, 45);
+            this.button_logout.Size = new System.Drawing.Size(205, 57);
             this.button_logout.TabIndex = 7;
             this.button_logout.Text = "Log Out";
             this.button_logout.UseVisualStyleBackColor = true;
@@ -166,9 +190,10 @@
             this.panel_scoresubmenu.Controls.Add(this.button_edit);
             this.panel_scoresubmenu.Controls.Add(this.button_addteacher);
             this.panel_scoresubmenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel_scoresubmenu.Location = new System.Drawing.Point(0, 438);
+            this.panel_scoresubmenu.Location = new System.Drawing.Point(0, 492);
+            this.panel_scoresubmenu.Margin = new System.Windows.Forms.Padding(4);
             this.panel_scoresubmenu.Name = "panel_scoresubmenu";
-            this.panel_scoresubmenu.Size = new System.Drawing.Size(164, 89);
+            this.panel_scoresubmenu.Size = new System.Drawing.Size(205, 111);
             this.panel_scoresubmenu.TabIndex = 6;
             // 
             // button_edit
@@ -178,10 +203,11 @@
             this.button_edit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_edit.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button_edit.ForeColor = System.Drawing.Color.White;
-            this.button_edit.Location = new System.Drawing.Point(0, 43);
+            this.button_edit.Location = new System.Drawing.Point(0, 54);
+            this.button_edit.Margin = new System.Windows.Forms.Padding(4);
             this.button_edit.Name = "button_edit";
-            this.button_edit.Padding = new System.Windows.Forms.Padding(21, 0, 0, 0);
-            this.button_edit.Size = new System.Drawing.Size(164, 47);
+            this.button_edit.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
+            this.button_edit.Size = new System.Drawing.Size(205, 59);
             this.button_edit.TabIndex = 1;
             this.button_edit.Text = "Edit Teacher";
             this.button_edit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -197,9 +223,10 @@
             this.button_addteacher.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button_addteacher.ForeColor = System.Drawing.Color.White;
             this.button_addteacher.Location = new System.Drawing.Point(0, 0);
+            this.button_addteacher.Margin = new System.Windows.Forms.Padding(4);
             this.button_addteacher.Name = "button_addteacher";
-            this.button_addteacher.Padding = new System.Windows.Forms.Padding(21, 0, 0, 0);
-            this.button_addteacher.Size = new System.Drawing.Size(164, 43);
+            this.button_addteacher.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
+            this.button_addteacher.Size = new System.Drawing.Size(205, 54);
             this.button_addteacher.TabIndex = 0;
             this.button_addteacher.Text = "Add Teacher";
             this.button_addteacher.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -213,10 +240,11 @@
             this.button_teacher.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_teacher.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button_teacher.ForeColor = System.Drawing.Color.White;
-            this.button_teacher.Location = new System.Drawing.Point(0, 393);
+            this.button_teacher.Location = new System.Drawing.Point(0, 436);
+            this.button_teacher.Margin = new System.Windows.Forms.Padding(4);
             this.button_teacher.Name = "button_teacher";
-            this.button_teacher.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button_teacher.Size = new System.Drawing.Size(164, 45);
+            this.button_teacher.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.button_teacher.Size = new System.Drawing.Size(205, 56);
             this.button_teacher.TabIndex = 5;
             this.button_teacher.Text = "Teacher";
             this.button_teacher.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -229,9 +257,10 @@
             this.panel_coursesubmenu.Controls.Add(this.button_managecourse);
             this.panel_coursesubmenu.Controls.Add(this.button_newcourse);
             this.panel_coursesubmenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel_coursesubmenu.Location = new System.Drawing.Point(0, 302);
+            this.panel_coursesubmenu.Location = new System.Drawing.Point(0, 322);
+            this.panel_coursesubmenu.Margin = new System.Windows.Forms.Padding(4);
             this.panel_coursesubmenu.Name = "panel_coursesubmenu";
-            this.panel_coursesubmenu.Size = new System.Drawing.Size(164, 91);
+            this.panel_coursesubmenu.Size = new System.Drawing.Size(205, 114);
             this.panel_coursesubmenu.TabIndex = 4;
             // 
             // button_managecourse
@@ -241,10 +270,11 @@
             this.button_managecourse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_managecourse.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button_managecourse.ForeColor = System.Drawing.Color.White;
-            this.button_managecourse.Location = new System.Drawing.Point(0, 43);
+            this.button_managecourse.Location = new System.Drawing.Point(0, 54);
+            this.button_managecourse.Margin = new System.Windows.Forms.Padding(4);
             this.button_managecourse.Name = "button_managecourse";
-            this.button_managecourse.Padding = new System.Windows.Forms.Padding(21, 0, 0, 0);
-            this.button_managecourse.Size = new System.Drawing.Size(164, 48);
+            this.button_managecourse.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
+            this.button_managecourse.Size = new System.Drawing.Size(205, 60);
             this.button_managecourse.TabIndex = 1;
             this.button_managecourse.Text = "Manage Subject";
             this.button_managecourse.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -260,9 +290,10 @@
             this.button_newcourse.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button_newcourse.ForeColor = System.Drawing.Color.White;
             this.button_newcourse.Location = new System.Drawing.Point(0, 0);
+            this.button_newcourse.Margin = new System.Windows.Forms.Padding(4);
             this.button_newcourse.Name = "button_newcourse";
-            this.button_newcourse.Padding = new System.Windows.Forms.Padding(21, 0, 0, 0);
-            this.button_newcourse.Size = new System.Drawing.Size(164, 43);
+            this.button_newcourse.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
+            this.button_newcourse.Size = new System.Drawing.Size(205, 54);
             this.button_newcourse.TabIndex = 0;
             this.button_newcourse.Text = "Add Subject";
             this.button_newcourse.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -276,10 +307,11 @@
             this.button_course.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_course.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button_course.ForeColor = System.Drawing.Color.White;
-            this.button_course.Location = new System.Drawing.Point(0, 257);
+            this.button_course.Location = new System.Drawing.Point(0, 266);
+            this.button_course.Margin = new System.Windows.Forms.Padding(4);
             this.button_course.Name = "button_course";
-            this.button_course.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button_course.Size = new System.Drawing.Size(164, 45);
+            this.button_course.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.button_course.Size = new System.Drawing.Size(205, 56);
             this.button_course.TabIndex = 3;
             this.button_course.Text = "Subject";
             this.button_course.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -289,31 +321,14 @@
             // panel_stdsubmenu
             // 
             this.panel_stdsubmenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.panel_stdsubmenu.Controls.Add(this.button_status);
             this.panel_stdsubmenu.Controls.Add(this.button_managestd);
             this.panel_stdsubmenu.Controls.Add(this.button_registration);
             this.panel_stdsubmenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel_stdsubmenu.Location = new System.Drawing.Point(0, 126);
+            this.panel_stdsubmenu.Location = new System.Drawing.Point(0, 157);
+            this.panel_stdsubmenu.Margin = new System.Windows.Forms.Padding(4);
             this.panel_stdsubmenu.Name = "panel_stdsubmenu";
-            this.panel_stdsubmenu.Size = new System.Drawing.Size(164, 131);
+            this.panel_stdsubmenu.Size = new System.Drawing.Size(205, 109);
             this.panel_stdsubmenu.TabIndex = 2;
-            // 
-            // button_status
-            // 
-            this.button_status.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button_status.FlatAppearance.BorderSize = 0;
-            this.button_status.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_status.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button_status.ForeColor = System.Drawing.Color.White;
-            this.button_status.Location = new System.Drawing.Point(0, 86);
-            this.button_status.Name = "button_status";
-            this.button_status.Padding = new System.Windows.Forms.Padding(21, 0, 0, 0);
-            this.button_status.Size = new System.Drawing.Size(164, 45);
-            this.button_status.TabIndex = 2;
-            this.button_status.Text = "Status";
-            this.button_status.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_status.UseVisualStyleBackColor = true;
-            this.button_status.Click += new System.EventHandler(this.button_status_Click);
             // 
             // button_managestd
             // 
@@ -322,10 +337,11 @@
             this.button_managestd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_managestd.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button_managestd.ForeColor = System.Drawing.Color.White;
-            this.button_managestd.Location = new System.Drawing.Point(0, 43);
+            this.button_managestd.Location = new System.Drawing.Point(0, 54);
+            this.button_managestd.Margin = new System.Windows.Forms.Padding(4);
             this.button_managestd.Name = "button_managestd";
-            this.button_managestd.Padding = new System.Windows.Forms.Padding(21, 0, 0, 0);
-            this.button_managestd.Size = new System.Drawing.Size(164, 43);
+            this.button_managestd.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
+            this.button_managestd.Size = new System.Drawing.Size(205, 54);
             this.button_managestd.TabIndex = 1;
             this.button_managestd.Text = "Edit Student";
             this.button_managestd.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -341,9 +357,10 @@
             this.button_registration.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button_registration.ForeColor = System.Drawing.Color.White;
             this.button_registration.Location = new System.Drawing.Point(0, 0);
+            this.button_registration.Margin = new System.Windows.Forms.Padding(4);
             this.button_registration.Name = "button_registration";
-            this.button_registration.Padding = new System.Windows.Forms.Padding(21, 0, 0, 0);
-            this.button_registration.Size = new System.Drawing.Size(164, 43);
+            this.button_registration.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
+            this.button_registration.Size = new System.Drawing.Size(205, 54);
             this.button_registration.TabIndex = 0;
             this.button_registration.Text = "Add Student";
             this.button_registration.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -357,10 +374,11 @@
             this.button_std.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_std.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button_std.ForeColor = System.Drawing.Color.White;
-            this.button_std.Location = new System.Drawing.Point(0, 81);
+            this.button_std.Location = new System.Drawing.Point(0, 101);
+            this.button_std.Margin = new System.Windows.Forms.Padding(4);
             this.button_std.Name = "button_std";
-            this.button_std.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button_std.Size = new System.Drawing.Size(164, 45);
+            this.button_std.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.button_std.Size = new System.Drawing.Size(205, 56);
             this.button_std.TabIndex = 1;
             this.button_std.Text = "Student";
             this.button_std.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -376,8 +394,9 @@
             this.panel_logo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.panel_logo.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.panel_logo.Location = new System.Drawing.Point(0, 0);
+            this.panel_logo.Margin = new System.Windows.Forms.Padding(4);
             this.panel_logo.Name = "panel_logo";
-            this.panel_logo.Size = new System.Drawing.Size(164, 81);
+            this.panel_logo.Size = new System.Drawing.Size(205, 101);
             this.panel_logo.TabIndex = 1;
             // 
             // pictureBox1
@@ -385,8 +404,9 @@
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(164, 81);
+            this.pictureBox1.Size = new System.Drawing.Size(205, 101);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
@@ -396,22 +416,24 @@
             // 
             this.panel_main.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.panel_main.ForeColor = System.Drawing.Color.Black;
-            this.panel_main.Location = new System.Drawing.Point(188, 3);
+            this.panel_main.Location = new System.Drawing.Point(235, 4);
+            this.panel_main.Margin = new System.Windows.Forms.Padding(4);
             this.panel_main.Name = "panel_main";
-            this.panel_main.Size = new System.Drawing.Size(971, 699);
+            this.panel_main.Size = new System.Drawing.Size(1214, 874);
             this.panel_main.TabIndex = 1;
             this.panel_main.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_main_Paint);
             // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1163, 707);
+            this.ClientSize = new System.Drawing.Size(1454, 884);
             this.Controls.Add(this.panel_main);
             this.Controls.Add(this.panel_slide);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmMain";
@@ -433,7 +455,6 @@
 
         private System.Windows.Forms.Panel panel_slide;
         private System.Windows.Forms.Panel panel_stdsubmenu;
-        private System.Windows.Forms.Button button_status;
         private System.Windows.Forms.Button button_managestd;
         private System.Windows.Forms.Button button_registration;
         private System.Windows.Forms.Button button_std;
@@ -453,5 +474,6 @@
         private System.Windows.Forms.Panel panel_logo;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button_stdofclass;
+        private System.Windows.Forms.Button button_dboard;
     }
 }

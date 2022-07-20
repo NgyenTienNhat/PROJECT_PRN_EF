@@ -94,7 +94,7 @@ namespace StudentManagement
         private void button_searchbyname_Click(object sender, EventArgs e)
         {
             DBPContext context = new DBPContext();
-            String keyword = textBox_search.Text.Trim();
+            string keyword = textBox_search.Text.Trim();
 
             if (keyword.Contains("ABC"))
             {
@@ -199,6 +199,12 @@ namespace StudentManagement
                 Student s = GetStudentInfo();
                 context.Remove(s);
                 context.SaveChanges();
+                textBox_Id.Clear();
+                textBox_fname.Clear();
+                textBox_lname.Clear();
+                textBox_rollno.Clear();
+                textBox_mobile.Clear();
+                textBox_address.Clear();
                 LoadDataForDGV();
             }
         }
