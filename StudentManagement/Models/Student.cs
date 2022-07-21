@@ -9,6 +9,7 @@ namespace StudentManagement.Models
     {
         public Student()
         {
+            Marks = new HashSet<Mark>();
             SubjectStudents = new HashSet<SubjectStudent>();
         }
 
@@ -21,8 +22,11 @@ namespace StudentManagement.Models
         public string RollNo { get; set; }
         public string Address { get; set; }
         public int? ClassId { get; set; }
+        public int? SubjectId { get; set; }
 
         public virtual Class Class { get; set; }
+        public virtual Subject Subject { get; set; }
+        public virtual ICollection<Mark> Marks { get; set; }
         public virtual ICollection<SubjectStudent> SubjectStudents { get; set; }
     }
 }

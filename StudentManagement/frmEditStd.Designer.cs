@@ -330,7 +330,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(468, 101);
+            this.label5.Location = new System.Drawing.Point(468, 98);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(120, 24);
             this.label5.TabIndex = 8;

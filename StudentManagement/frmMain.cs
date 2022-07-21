@@ -20,9 +20,10 @@ namespace StudentManagement
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-
+            openchildForm(new frmHome());
+            
         }
-
+        
         private void customizeDesign()
         {
             panel_stdsubmenu.Visible= false;
@@ -131,8 +132,19 @@ namespace StudentManagement
 
         private void button_logout_Click(object sender, EventArgs e)
         {
-            this.Close();
-
+            string message ="Bạn có chắc chắn muốn thoát?";
+            string title = "Log Out";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show(message, title, buttons);
+            if (result == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+            else
+            {
+                // Do something  
+            }
+            
         }
 
         private void button_class_Click(object sender, EventArgs e)
@@ -148,7 +160,8 @@ namespace StudentManagement
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-
+            openchildForm(new frmHome());
+            hideSubmenu();
         }
 
         private void button_stdofclass_Click(object sender, EventArgs e)
@@ -165,6 +178,29 @@ namespace StudentManagement
         private void button_dboard_Click(object sender, EventArgs e)
         {
             openchildForm(new frmDashboard());
+            hideSubmenu();
+        }
+
+        private void bt_managecourseofstd_Click(object sender, EventArgs e)
+        {
+            openchildForm(new frmCourse());
+            hideSubmenu();
+        }
+
+        private void pictureBox_main_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = false;
+        }
+
+        private void button_setting_Click(object sender, EventArgs e)
+        {
+            openchildForm(new frmChangePassword());
+            hideSubmenu();
         }
     }
 }

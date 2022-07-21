@@ -1,7 +1,6 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.Extensions.Configuration;
 
 #nullable disable
 
@@ -20,8 +19,8 @@ namespace StudentManagement.Models
 
         public virtual DbSet<Account> Accounts { get; set; }
         public virtual DbSet<Class> Classes { get; set; }
+        public virtual DbSet<Mark> Marks { get; set; }
         public virtual DbSet<Student> Students { get; set; }
-        public virtual DbSet<StudentAttendence> StudentAttendences { get; set; }
         public virtual DbSet<Subject> Subjects { get; set; }
         public virtual DbSet<SubjectStudent> SubjectStudents { get; set; }
         public virtual DbSet<Teacher> Teachers { get; set; }
@@ -32,8 +31,8 @@ namespace StudentManagement.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-                var config = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
-                optionsBuilder.UseSqlServer(config.GetConnectionString("MyConStr"));
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+                optionsBuilder.UseSqlServer("server=localhost; database=DBP; user=sa ; password=123456");
             }
         }
 
@@ -67,6 +66,21 @@ namespace StudentManagement.Models
                     .IsUnicode(false);
             });
 
+            modelBuilder.Entity<Mark>(entity =>
+            {
+                entity.ToTable("Mark");
+
+                entity.HasOne(d => d.Student)
+                    .WithMany(p => p.Marks)
+                    .HasForeignKey(d => d.StudentId)
+                    .HasConstraintName("FK_Mark_Student");
+
+                entity.HasOne(d => d.Subject)
+                    .WithMany(p => p.Marks)
+                    .HasForeignKey(d => d.SubjectId)
+                    .HasConstraintName("FK_Mark_Subject1");
+            });
+
             modelBuilder.Entity<Student>(entity =>
             {
                 entity.ToTable("Student");
@@ -91,27 +105,11 @@ namespace StudentManagement.Models
                     .WithMany(p => p.Students)
                     .HasForeignKey(d => d.ClassId)
                     .HasConstraintName("FK__Student__ClassId__29572725");
-            });
-
-            modelBuilder.Entity<StudentAttendence>(entity =>
-            {
-                entity.ToTable("StudentAttendence");
-
-                entity.Property(e => e.Date).HasColumnType("date");
-
-                entity.Property(e => e.RollNo)
-                    .HasMaxLength(50)
-                    .IsUnicode(false);
-
-                entity.HasOne(d => d.Class)
-                    .WithMany(p => p.StudentAttendences)
-                    .HasForeignKey(d => d.ClassId)
-                    .HasConstraintName("FK__StudentAt__Class__35BCFE0A");
 
                 entity.HasOne(d => d.Subject)
-                    .WithMany(p => p.StudentAttendences)
+                    .WithMany(p => p.Students)
                     .HasForeignKey(d => d.SubjectId)
-                    .HasConstraintName("FK__StudentAt__Subje__36B12243");
+                    .HasConstraintName("FK_Student_Subject");
             });
 
             modelBuilder.Entity<Subject>(entity =>
@@ -126,11 +124,6 @@ namespace StudentManagement.Models
             modelBuilder.Entity<SubjectStudent>(entity =>
             {
                 entity.ToTable("SubjectStudent");
-
-                entity.HasOne(d => d.Class)
-                    .WithMany(p => p.SubjectStudents)
-                    .HasForeignKey(d => d.ClassId)
-                    .HasConstraintName("FK_SubjectStudent_Class");
 
                 entity.HasOne(d => d.Student)
                     .WithMany(p => p.SubjectStudents)

@@ -166,8 +166,8 @@ namespace StudentManagement
                  || x.Mobile.Contains(keyword)
                  || x.Address.Contains(keyword)
                  ).Select(x => new { x.StudentId, x.FirstName, x.LastName, x.Dob, x.Male, x.Mobile, x.RollNo, x.Address, x.ClassId }).ToList();*/
-            }
         }
+        
 
         private void button_update_std_Click(object sender, EventArgs e)
         {
