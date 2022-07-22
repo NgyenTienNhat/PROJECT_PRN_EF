@@ -21,7 +21,7 @@ namespace StudentManagement
 
         private void button_exitlogin_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            Application.Exit();
         }
 
         private void button_login_Click(object sender, EventArgs e)
@@ -47,7 +47,8 @@ namespace StudentManagement
             else
             {
                 DBPContext context = new DBPContext();
-                Account account = context.Accounts.FirstOrDefault(x => x.UserName == textBox_username.Text && x.Password == textBox_password.Text);
+                Account account = context.Accounts.FirstOrDefault(x => x.Username == textBox_username.Text && x.Password == textBox_password.Text);
+                
                 if (account != null)
                 {
                     this.Hide();

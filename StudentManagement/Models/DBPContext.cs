@@ -42,19 +42,11 @@ namespace StudentManagement.Models
 
             modelBuilder.Entity<Account>(entity =>
             {
-                entity.HasNoKey();
-
                 entity.ToTable("Account");
 
-                entity.Property(e => e.AccountId).ValueGeneratedOnAdd();
+                entity.Property(e => e.Password).HasMaxLength(30);
 
-                entity.Property(e => e.Password)
-                    .HasMaxLength(20)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.UserName)
-                    .HasMaxLength(20)
-                    .IsUnicode(false);
+                entity.Property(e => e.Username).HasMaxLength(30);
             });
 
             modelBuilder.Entity<Class>(entity =>

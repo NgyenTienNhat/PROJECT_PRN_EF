@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StudentManagement.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,7 +18,8 @@ namespace StudentManagement
             InitializeComponent();
             customizeDesign();
         }
-
+       
+        Account account;
         private void frmMain_Load(object sender, EventArgs e)
         {
             openchildForm(new frmHome());

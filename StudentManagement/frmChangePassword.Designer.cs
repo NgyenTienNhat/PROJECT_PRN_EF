@@ -34,7 +34,17 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.bt_save = new System.Windows.Forms.Button();
+            this.tb_repass = new System.Windows.Forms.TextBox();
+            this.tb_pass = new System.Windows.Forms.TextBox();
+            this.tb_user = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.tb_oldpass = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -93,10 +103,97 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.tb_oldpass);
+            this.panel3.Controls.Add(this.label3);
+            this.panel3.Controls.Add(this.bt_save);
+            this.panel3.Controls.Add(this.tb_repass);
+            this.panel3.Controls.Add(this.tb_pass);
+            this.panel3.Controls.Add(this.tb_user);
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Controls.Add(this.label1);
+            this.panel3.Controls.Add(this.label6);
             this.panel3.Location = new System.Drawing.Point(12, 54);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(934, 303);
+            this.panel3.Size = new System.Drawing.Size(431, 303);
             this.panel3.TabIndex = 27;
+            // 
+            // bt_save
+            // 
+            this.bt_save.Location = new System.Drawing.Point(162, 241);
+            this.bt_save.Name = "bt_save";
+            this.bt_save.Size = new System.Drawing.Size(111, 37);
+            this.bt_save.TabIndex = 38;
+            this.bt_save.Text = "Save";
+            this.bt_save.UseVisualStyleBackColor = true;
+            this.bt_save.Click += new System.EventHandler(this.bt_save_Click);
+            // 
+            // tb_repass
+            // 
+            this.tb_repass.Location = new System.Drawing.Point(172, 152);
+            this.tb_repass.Name = "tb_repass";
+            this.tb_repass.Size = new System.Drawing.Size(191, 27);
+            this.tb_repass.TabIndex = 37;
+            // 
+            // tb_pass
+            // 
+            this.tb_pass.Location = new System.Drawing.Point(172, 105);
+            this.tb_pass.Name = "tb_pass";
+            this.tb_pass.Size = new System.Drawing.Size(191, 27);
+            this.tb_pass.TabIndex = 36;
+            // 
+            // tb_user
+            // 
+            this.tb_user.Location = new System.Drawing.Point(172, 17);
+            this.tb_user.Name = "tb_user";
+            this.tb_user.Size = new System.Drawing.Size(191, 27);
+            this.tb_user.TabIndex = 35;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(3, 152);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(131, 24);
+            this.label2.TabIndex = 34;
+            this.label2.Text = "Re-Password  :";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(3, 105);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(141, 24);
+            this.label1.TabIndex = 33;
+            this.label1.Text = "New Password :";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(3, 20);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(107, 24);
+            this.label6.TabIndex = 32;
+            this.label6.Text = "UserName :";
+            // 
+            // tb_oldpass
+            // 
+            this.tb_oldpass.Location = new System.Drawing.Point(172, 61);
+            this.tb_oldpass.Name = "tb_oldpass";
+            this.tb_oldpass.Size = new System.Drawing.Size(191, 27);
+            this.tb_oldpass.TabIndex = 40;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(3, 61);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(133, 24);
+            this.label3.TabIndex = 39;
+            this.label3.Text = "Old Password :";
             // 
             // frmChangePassword
             // 
@@ -109,8 +206,11 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmChangePassword";
             this.Text = "frmChangePassword";
+            this.Load += new System.EventHandler(this.frmChangePassword_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -123,5 +223,14 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button bt_save;
+        private System.Windows.Forms.TextBox tb_repass;
+        private System.Windows.Forms.TextBox tb_pass;
+        private System.Windows.Forms.TextBox tb_user;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox tb_oldpass;
+        private System.Windows.Forms.Label label3;
     }
 }
